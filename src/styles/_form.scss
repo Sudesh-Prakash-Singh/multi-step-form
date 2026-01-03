@@ -394,9 +394,7 @@
       text-transform: capitalize;
       color: $blue-900;
       font-weight: 500;
-      @media (orientation: portrait) and (max-width: $bp-lg) {
-        font-size: 1.1rem;
-      }
+      font-size: 1.1rem;
     }
 
     &-price {
