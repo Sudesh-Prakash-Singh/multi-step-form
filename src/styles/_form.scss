@@ -106,12 +106,14 @@
     }
 
     @media (orientation: portrait) and (max-width: $bp-lg) {
-      position: sticky;
-      bottom: 0%;
+      position: fixed;
+      bottom: env(safe-area-inset-bottom);
       left: 0;
+      right: 0;
       background-color: $white;
       padding: 1rem 1rem;
       margin: 0;
+      z-index: 1000;
     }
   }
 

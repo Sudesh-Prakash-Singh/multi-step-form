@@ -32,14 +32,14 @@
   margin: auto;
 
   @media (orientation: portrait) and (max-width: $bp-lg) {
-    overflow-y: auto;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, min-content) 1fr min-content;
+    grid-template-rows: repeat(4, min-content) 1fr 1fr;
     align-items: stretch;
     max-width: none;
     min-width: unset;
-    height: 100vh;
+    height: 100%;
     padding: 0;
+    margin-bottom: 5rem;
     border-radius: 0;
     gap: 0;
     box-shadow: none;
