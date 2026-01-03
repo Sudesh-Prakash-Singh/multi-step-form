@@ -1,0 +1,165 @@
+@use "variables" as *;
+
+@font-face {
+  font-family: "Ubuntu";
+  src: url("../assets/fonts/Ubuntu-Regular.ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Ubuntu";
+  src: url("../assets/fonts/Ubuntu-Medium.ttf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Ubuntu";
+  src: url("../assets/fonts/Ubuntu-Bold.ttf");
+  font-weight: 700;
+}
+
+.icon {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  &--arcade {
+    background-image: url("../assets/images/icon-arcade.svg");
+  }
+
+  &--advanced {
+    background-image: url("../assets/images/icon-advanced.svg");
+  }
+
+  &--pro {
+    background-image: url("../assets/images/icon-pro.svg");
+  }
+
+  &--thankyou {
+    background-image: url("../assets/images/icon-thank-you.svg");
+  }
+}
+
+body {
+  font-family: $font-family-base;
+  font-size: $font-base-size;
+  color: $blue-950;
+  background-color: $blue-100;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 700;
+  color: $blue-950;
+}
+
+p {
+  margin: 0;
+  color: $grey-500;
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+input {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.btn {
+  padding: 0.75rem 1.2rem;
+  border-radius: 7px;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+
+  &-primary {
+    background-color: $blue-950;
+    color: $white;
+
+    &:hover {
+      background-color: $blue-900;
+    }
+  }
+
+  &-secondary {
+    background-color: $purple-600;
+    color: $white;
+
+    &:hover {
+      background-color: $purple-500;
+    }
+  }
+
+  &-link {
+    background-color: transparent;
+    color: $grey-500;
+    &:hover {
+      color: $blue-900;
+    }
+  }
+}
+
+.checkbox {
+  &__box {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    border: 1px solid $coral-500;
+    box-sizing: border-box;
+
+    display: grid;
+    place-items: center;
+
+    background: $white;
+    transition: all 0.2s ease, border-color 0.2s ease;
+  }
+
+  &__checkmark {
+    width: 80%;
+    height: 80%;
+
+    stroke: $white;
+    stroke-width: 3;
+    fill: none;
+
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.15s ease, transform 0.15s ease;
+  }
+
+  & input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  & input:checked + &__box {
+    background: $coral-500;
+    border-color: $coral-500;
+  }
+
+  & input:checked + &__box &__checkmark {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 100%;
+  }
+}

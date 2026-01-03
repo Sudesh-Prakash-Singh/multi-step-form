@@ -1,0 +1,23 @@
+@use "variables" as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: $font-base-size;
+
+  @media (min-width: $bp-lg) {
+    font-size: calc(1.2 * $font-base-size);
+  }
+
+  @media (min-width: $bp-hg) {
+    font-size: calc(1.5 * $font-base-size);
+  }
+}
+
+body {
+  margin: 0;
+}
