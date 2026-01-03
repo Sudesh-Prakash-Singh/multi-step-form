@@ -107,11 +107,11 @@
 
     @media (orientation: portrait) and (max-width: $bp-lg) {
       position: fixed;
-      bottom: env(safe-area-inset-bottom);
+      bottom: 0;
       left: 0;
       right: 0;
       background-color: $white;
-      padding: 1rem 1rem;
+      padding: 1rem 1rem calc(env(safe-area-inset-bottom) + 1rem) 1rem;
       margin: 0;
       z-index: 1000;
     }
