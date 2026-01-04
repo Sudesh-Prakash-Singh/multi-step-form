@@ -13,19 +13,21 @@ function PlanCard({ name, plan }) {
   const price = evaluateAndFormatPrice(getPlanPrice(plan));
 
   return (
-    <div
-      className={`card ${selected ? "card--active" : ""}`}
-      onClick={() => setValue("plan", plan)}
-    >
-      <div className={`icon ${icon} card__icon`}></div>
+    <div className="slide-in">
       <div
-        className={`card__content ${
-          isYearlyBilling && freeMonths ? "card__free--visible" : ""
-        }`}
+        className={`card ${selected ? "card--active" : ""}`}
+        onClick={() => setValue("plan", plan)}
       >
-        <h4>{name}</h4>
-        <p className="card__price">{price}</p>
-        <p className="card__free">{freeMonths} months free</p>
+        <div className={`icon ${icon} card__icon`}></div>
+        <div
+          className={`card__content ${
+            isYearlyBilling && freeMonths ? "card__free--visible" : ""
+          }`}
+        >
+          <h4>{name}</h4>
+          <p className="card__price">{price}</p>
+          <p className="card__free">{freeMonths} months free</p>
+        </div>
       </div>
     </div>
   );

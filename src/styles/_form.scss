@@ -187,13 +187,26 @@
 }
 
 .cards {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   flex: 0 0 60%;
   gap: 1rem;
 
   @media (orientation: portrait) and (max-width: $bp-lg) {
-    flex-direction: column;
+    grid-template-columns: 1fr;
   }
+}
+
+.slide-in:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.slide-in:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.slide-in:nth-child(3) {
+  animation-delay: 0.5s;
 }
 
 .card {
@@ -217,6 +230,10 @@
     background-color: $blue-50;
     border-color: $purple-600;
     transform: scale(1.1);
+
+    @media (orientation: portrait) and (max-width: $bp-lg) {
+      transform: scale(1.05);
+    }
   }
 
   &__icon {
@@ -232,7 +249,7 @@
     }
   }
 
-  &:hover &__icon {
+  &--active &__icon {
     transform: rotate(0.1turn);
   }
 

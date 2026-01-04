@@ -5,7 +5,7 @@ function AddOn({ item, checked, onChange }) {
   const { evaluateAndFormatPrice } = useForm();
   const formattedPrice = evaluateAndFormatPrice(item.price);
   return (
-    <label className="form__item addon">
+    <label className="form__item addon slide-in">
       <Checkbox
         checked={checked}
         onChange={onChange}
