@@ -211,12 +211,12 @@
 
   &:hover {
     border-color: $purple-600;
-    transform: scale(1.1);
   }
 
   &--active {
     background-color: $blue-50;
     border-color: $purple-600;
+    transform: scale(1.1);
   }
 
   &__icon {
@@ -322,7 +322,6 @@
 
   &:hover {
     border-color: $purple-600;
-    transform: scale(1.1);
   }
 
   &:has(input:checked) {
